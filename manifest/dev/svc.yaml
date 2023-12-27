@@ -1,0 +1,12 @@
+kind: Service
+apiVersion: v1
+metadata:
+  name: dev-ssh-sidecar
+spec:
+  selector:
+    app: dev-ssh-sidecar
+  type: ClusterIP
+  ports:
+    - name: ssh
+      port: 22
+      targetPort: 22
