@@ -4,7 +4,7 @@ import (
 	"context"
 	"fmt"
 
-	"github.com/snakesneaks/k8s-ssh-sidecar/pkg/pod"
+	"github.com/snakesneaks/k8s-ssh4csh/pkg/pod"
 	corev1 "k8s.io/api/core/v1"
 )
 

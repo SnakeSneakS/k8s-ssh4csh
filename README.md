@@ -14,6 +14,13 @@
 # How to develop on k8s?
 - check [./manifest/dev/README.md](./manifest/dev/README.md)
 
+# TODO list (note)
+- reconsidering the architecture
+    - Is sidecar-pattern appropriate for thisr usage?? 
+- build & push docker image
+- develop injector (using admission webhook)
+
+
 <!--
 # refered web pages while development: 
 - [k8ssshの参考になるリポジトリ](https://github.com/guilhem/k8ssh) 

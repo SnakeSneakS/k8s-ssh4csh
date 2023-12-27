@@ -4,6 +4,7 @@
 ```
 make dev-pod-deploy
 SUBCMD=echo-containers make dev-pod-run
+# change SUBCMD and do debug
 ```
 
 # refs

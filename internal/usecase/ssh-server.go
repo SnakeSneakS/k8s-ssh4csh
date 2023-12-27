@@ -8,8 +8,8 @@ import (
 	gossh "golang.org/x/crypto/ssh"
 
 	"github.com/gliderlabs/ssh"
-	"github.com/snakesneaks/k8s-ssh-sidecar/pkg/pod"
-	sshserver "github.com/snakesneaks/k8s-ssh-sidecar/pkg/ssh"
+	"github.com/snakesneaks/k8s-ssh4csh/pkg/pod"
+	sshserver "github.com/snakesneaks/k8s-ssh4csh/pkg/ssh"
 )
 
 type sshUsecase struct {

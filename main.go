@@ -1,6 +1,6 @@
 package main
 
-import "github.com/snakesneaks/k8s-ssh-sidecar/cmd"
+import "github.com/snakesneaks/k8s-ssh4csh/cmd"
 
 func main() {
 	cmd.Execute()

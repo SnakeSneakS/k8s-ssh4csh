@@ -7,7 +7,7 @@ import (
 	"syscall"
 
 	"github.com/cockroachdb/errors"
-	"github.com/snakesneaks/k8s-ssh-sidecar/internal/usecase"
+	"github.com/snakesneaks/k8s-ssh4csh/internal/usecase"
 
 	"github.com/spf13/cobra"
 )

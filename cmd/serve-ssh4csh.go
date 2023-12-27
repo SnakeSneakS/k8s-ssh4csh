@@ -8,10 +8,10 @@ import (
 	"os/signal"
 	"syscall"
 
-	"github.com/snakesneaks/k8s-ssh-sidecar/internal/config"
-	"github.com/snakesneaks/k8s-ssh-sidecar/internal/usecase"
-	"github.com/snakesneaks/k8s-ssh-sidecar/pkg/pod"
-	"github.com/snakesneaks/k8s-ssh-sidecar/pkg/ssh"
+	"github.com/snakesneaks/k8s-ssh4csh/internal/config"
+	"github.com/snakesneaks/k8s-ssh4csh/internal/usecase"
+	"github.com/snakesneaks/k8s-ssh4csh/pkg/pod"
+	"github.com/snakesneaks/k8s-ssh4csh/pkg/ssh"
 	"github.com/spf13/cobra"
 )
 

@@ -1,4 +1,4 @@
-module github.com/snakesneaks/k8s-ssh-sidecar
+module github.com/snakesneaks/k8s-ssh4csh
 
 go 1.20
 
