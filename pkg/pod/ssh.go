@@ -20,7 +20,7 @@ type sshHandler struct {
 	restClient *rest.RESTClient
 }
 type SshHandler interface {
-	Ssh4ContainerShellHandler(cri CRI, cmd string) func(ssh.Session)
+	Ssh4CshHandler(cri CRI, sh string) func(ssh.Session)
 }
 
 func NewSshHandler(
@@ -53,11 +53,11 @@ const AuthorizedKeyAnnotation = "ssh.barpilot.io/publickey"
 const CommandAnnotation = "ssh.barpilot.io/command"
 const PrefixCommandAnnotation = "ssh.barpilot.io/prefix-command"
 
-func (h *sshHandler) Ssh4ContainerShellHandler(cri CRI, cmd string) func(ssh.Session) {
+func (h *sshHandler) Ssh4CshHandler(cri CRI, shCmd string) func(ssh.Session) {
 	return func(s ssh.Session) {
 		ctx := s.Context()
 		cmds := s.Command()
-		cmds = append([]string{cmd}, cmds...)
+		cmds = append([]string{shCmd}, cmds...)
 		//shlex.Split()
 		_, cWindows, hasPTY := s.Pty()
 		queue := sizeQueue{C: cWindows}

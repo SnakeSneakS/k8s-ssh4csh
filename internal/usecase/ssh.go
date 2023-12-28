@@ -53,10 +53,10 @@ func NewSshUsecase(
 }
 
 // StartSshServer4ContainerShell runs ssh server which is connected to container shell
-func (s *sshUsecase) StartSshServer4ContainerShell(cri pod.CRI, cmd string) error {
+func (s *sshUsecase) StartSshServer4ContainerShell(cri pod.CRI, sh string) error {
 	addr := fmt.Sprintf(":%s", s.port)
 
-	handler := s.sshHandler.Ssh4ContainerShellHandler(cri, cmd) //ssh.DefaultHandler
+	handler := s.sshHandler.Ssh4CshHandler(cri, sh) //ssh.DefaultHandler
 	rl := sshserver.NewRateLimiter()
 
 	server := ssh.Server{
@@ -71,17 +71,6 @@ func (s *sshUsecase) StartSshServer4ContainerShell(cri pod.CRI, cmd string) erro
 		ConnectionFailedCallback: rl.ConnectionFailedCallback(),
 	}
 
-	/*
-		var lc net.ListenConfig
-		l, err := lc.Listen(s.ctx, "tcp", fmt.Sprintf(":%s", s.port))
-		if err != nil {
-			return err
-		}
-
-		if err := server.Serve(l); err != nil {
-			return err
-		}
-	*/
 	s.server = &server
 	if err := server.ListenAndServe(); err != nil {
 		return err

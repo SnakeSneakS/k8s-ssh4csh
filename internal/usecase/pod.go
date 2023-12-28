@@ -45,7 +45,11 @@ func (u *podUsecase) GetContainerInCurrentPod(targetContainerName string) (*core
 		}
 	}
 	if targetContainer == nil {
-		return nil, fmt.Errorf("target container %s not found", targetContainer)
+		names := make([]string, len(pod.Spec.Containers))
+		for i, c := range pod.Spec.Containers {
+			names[i] = c.Name
+		}
+		return nil, fmt.Errorf("target container %s not found. Container names in this pod are only the following: %v", targetContainer, names)
 	}
 
 	return targetContainer, nil

@@ -70,6 +70,11 @@ func serve(cmd *cobra.Command, args []string) error {
 	if err != nil {
 		return err
 	}
+	/*
+		if _, err := podUsecase.GetContainerInCurrentPod(env.TARGET_CONTAINER); err != nil {
+			return err
+		}
+	*/
 	cri := pod.NewCRI(env.TARGET_CONTAINER, currentPod.GetName(), currentPod.GetNamespace())
 
 	log.Printf("port: %s\nssh-pub-key: %s\n", env.CONFIG.SERVER_PORT, env.CONFIG.SSH_PUB_KEY)
